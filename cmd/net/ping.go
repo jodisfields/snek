@@ -16,9 +16,9 @@ var (
 
 func ping(domain string) (int, error) {
 	url := "http://" + domain
-	req, err := http.NewRequest("HEAD", url, nil)
-	if err != nil {
-		return 0, err
+	req, error := http.NewRequest("HEAD", url, nil)
+	if error != nil {
+		return 0, error
 	}
 	resp, err := client.Do(req)
 	if err != nil {
